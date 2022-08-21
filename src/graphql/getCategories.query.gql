@@ -1,0 +1,9 @@
+query getCategories {
+  categories {
+    total_count
+    items {
+      uid
+      name
+    }
+  }
+}

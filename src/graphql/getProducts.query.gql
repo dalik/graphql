@@ -1,0 +1,21 @@
+query getProducts($uid: String, $currentPage: Int) {
+  products(pageSize: 20, currentPage: $currentPage, filter: {category_uid: {eq: $uid}}) {
+    total_count,
+    items {
+      sku,
+      name
+      price_range {
+        minimum_price {
+          regular_price {
+            value
+            currency
+          }
+        }
+      }
+    }
+    page_info {
+      page_size
+      current_page
+    }
+  }
+}
